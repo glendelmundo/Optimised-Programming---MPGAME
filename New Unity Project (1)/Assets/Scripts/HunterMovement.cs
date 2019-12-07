@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class HunterMovement : MonoBehaviour
 {
-    public float speed = 6.0f;
+    public float speed = 10f;
+    public float jumpSpeed = 4f;
+    public bool isGrounded = false;
+
+    public float sprintTime = 0f;
+    public float nextSprintTime = 2f;
+
+    Rigidbody rb;
 
     
-
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ground" && isGrounded == false)
+        {
+            isGrounded = true;
+        }
     }
 
     // Update is called once per frame
@@ -36,7 +51,20 @@ public class HunterMovement : MonoBehaviour
         {
             transform.position += transform.right * Time.deltaTime * speed;
         }
-
+        if (Input.GetKey(KeyCode.Space) && isGrounded == true)
+        {
+            rb.AddForce(new Vector3(0, 2, 0) * jumpSpeed, ForceMode.Impulse);
+            isGrounded = false;
+        }
+        
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 15f;
+        }
+        else
+        {
+            speed = 10f;
+        }
         
     }
 }

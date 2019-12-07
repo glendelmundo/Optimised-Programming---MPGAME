@@ -2,10 +2,13 @@
 
 public class RoomController : MonoBehaviour
 {
+    public int chooser;
     //Player instance prefab, must be located in the Resources folder
     public GameObject playerPrefab;
+    public GameObject hunterPrefab;
     //Player spawn point
-    public Transform spawnPoint;
+    public Transform playerSpawnPoint;
+    public Transform hunterSpawnPoint;
 
     // Use this for initialization
     void Start()
@@ -17,11 +20,21 @@ public class RoomController : MonoBehaviour
             return;
         }
 
-        
+        chooser = Random.Range(1,3);
 
-        //We're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-        PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
-        PhotonNetwork.automaticallySyncScene = true;
+        if (chooser == 1)
+        {
+            //We're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+            PhotonNetwork.Instantiate(playerPrefab.name, playerSpawnPoint.position, Quaternion.identity, 0);
+            PhotonNetwork.automaticallySyncScene = true;
+        }
+
+        if (chooser == 2)
+        {
+            PhotonNetwork.Instantiate(hunterPrefab.name, hunterSpawnPoint.position, Quaternion.identity, 0);
+            PhotonNetwork.automaticallySyncScene = true;
+        }
+        
     }
 
     void OnGUI()

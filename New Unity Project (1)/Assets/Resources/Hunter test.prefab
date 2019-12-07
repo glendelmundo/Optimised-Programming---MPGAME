@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 8582399176735925612}
   - component: {fileID: 5730552681139004404}
   - component: {fileID: 7620939815888272606}
+  - component: {fileID: -5073641284378972363}
   m_Layer: 0
   m_Name: Hunter test
   m_TagString: Untagged
@@ -169,6 +170,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -223,7 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2888e93e97b7df8418237e2885535c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 10
+  jumpSpeed: 5
+  isGrounded: 0
+  sprintTime: 0
+  nextSprintTime: 2
 --- !u!114 &5730552681139004404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,14 +260,31 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
-  synchronization: 0
+  synchronization: 1
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: -5073641284378972363}
+  - {fileID: 6320241217934420535}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &-5073641284378972363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7692391659072138649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241fac1c7db29bf4c80e71ae0b047a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localScripts:
+  - {fileID: 8582399176735925612}
+  localObject:
+  - {fileID: 7058287785007668384}

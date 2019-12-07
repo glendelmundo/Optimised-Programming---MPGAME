@@ -126,10 +126,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpSpeed: 8
+  jumpSpeed: 6
   gravity: 20
   lookAt: {fileID: 5822729031184827386}
   cam: {fileID: 5822729031184827389}
+  isGrounded: 0
 --- !u!114 &-5520270673184630127
 MonoBehaviour:
   m_ObjectHideFlags: 0

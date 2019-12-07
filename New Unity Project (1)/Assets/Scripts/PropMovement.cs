@@ -35,7 +35,7 @@ public class PropMovement : MonoBehaviour
     }
         void Update()
     {
-
+        
 
         if (Input.GetKey(KeyCode.W))
         {
