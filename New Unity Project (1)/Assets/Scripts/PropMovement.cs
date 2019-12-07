@@ -99,7 +99,7 @@ public class PropMovement : Photon.MonoBehaviour
         {
             Debug.Log("You can change");
         }
-        //Debug.Log(Vector3.Distance(ChangeInto[1].transform.position, gameObject.transform.position));
+        
     }
         void LateUpdate()
     {
