@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Prop
   - Ground
+  - Transform
   layers:
   - Default
   - TransparentFX
