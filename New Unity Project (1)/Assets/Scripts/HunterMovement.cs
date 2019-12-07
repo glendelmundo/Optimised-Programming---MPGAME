@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HunterMovement : MonoBehaviour
+public class HunterMovement : Photon.MonoBehaviour
 {
     public float speed = 10f;
     public float jumpSpeed = 4f;
@@ -12,8 +12,6 @@ public class HunterMovement : MonoBehaviour
     public float nextSprintTime = 2f;
 
     Rigidbody rb;
-
-    
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +27,11 @@ public class HunterMovement : MonoBehaviour
         }
     }
 
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+
         var pos = transform.position;
 
         if (Input.GetKey(KeyCode.W))

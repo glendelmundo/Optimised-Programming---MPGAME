@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PropMovement : MonoBehaviour
+public class PropMovement : Photon.MonoBehaviour
 {
     CharacterController characterController;
 
@@ -15,7 +15,7 @@ public class PropMovement : MonoBehaviour
     public Camera cam;
 
     public bool isGrounded;
-    Rigidbody rb;
+    public Rigidbody rb;
 
 
     void Start()
@@ -30,12 +30,11 @@ public class PropMovement : MonoBehaviour
         {
             isGrounded = true;
         }
-
-
     }
-        void Update()
+
+    public void FixedUpdate()
     {
-        
+       
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -59,9 +58,23 @@ public class PropMovement : MonoBehaviour
             rb.AddForce(new Vector3(0, 2, 0) * jumpSpeed, ForceMode.Impulse);
             isGrounded = false;
         }
-
     }
 
+    void Update()
+    {
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.6f, 0f));
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
+            Debug.Log(hitInfo.transform.gameObject.name);
+        }
+        else
+        {
+            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.green);
+        }
+    }
         void LateUpdate()
     {
        transform.LookAt(new Vector3(lookAt.position.x, transform.position.y, lookAt.position.z));

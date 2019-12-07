@@ -20,7 +20,7 @@ public class RoomController : MonoBehaviour
             return;
         }
 
-        chooser = Random.Range(1,3);
+        chooser = Random.Range(1,2);
 
         if (chooser == 1)
         {
