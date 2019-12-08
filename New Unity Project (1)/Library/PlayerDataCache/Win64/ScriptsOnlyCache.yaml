@@ -41,6 +41,7 @@ ScriptsOnlyBuild:
     - ThirdPersonCamera1
     - ThirdPersonController
     - ThirdPersonNetwork
+    - TransformIntoScript
     - myThirdPersonController
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -115,6 +116,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9740}
     - Class: 114
+      Script: {instanceID: 9746}
+    - Class: 114
       Script: {instanceID: 9844}
     - Class: 114
       Script: {instanceID: 9876}
@@ -177,6 +180,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11540}
     - Class: 114
+      Script: {instanceID: 11548}
+    - Class: 114
       Script: {instanceID: 11566}
     - Class: 114
       Script: {instanceID: 11588}
@@ -200,6 +205,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12044}
     - Class: 114
       Script: {instanceID: 12060}
+    - Class: 114
+      Script: {instanceID: 72090}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -219,6 +226,8 @@ ScriptsOnlyBuild:
     - Class: 213
       Script: {instanceID: 0}
     - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
@@ -260,6 +269,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9746}
     - Class: 114
+      Script: {instanceID: 9956}
+    - Class: 114
       Script: {instanceID: 10004}
     - Class: 114
       Script: {instanceID: 10496}
@@ -281,7 +292,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11934}
     - Class: 114
       Script: {instanceID: 12008}
+    - Class: 114
+      Script: {instanceID: 72090}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
@@ -1430,6 +1445,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 47bdc8cdcc5e127b6a008584e4e51cfa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TransformIntoScript
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
